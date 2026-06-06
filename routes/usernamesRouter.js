@@ -1,17 +1,16 @@
 import { Router } from "express";
+import {
+  getUsernames,
+  createUsernameGet,
+  createUsernamePost,
+} from "../controllers/usernamesController.js";
 
 const usernamesRouter = Router();
 
-usernamesRouter.get("/", (req, res) => {
-  console.log("usernames will be logged here - wip");
-});
+usernamesRouter.get("/", getUsernames);
 
-usernamesRouter.get("/new", (req, res) => {
-  res.render("addUsername");
-});
+usernamesRouter.get("/new", createUsernameGet);
 
-usernamesRouter.post("/new", (req, res) => {
-  console.log("username to be saved: ", req.body.username);
-});
+usernamesRouter.post("/new", createUsernamePost);
 
 export default usernamesRouter;
