@@ -1,0 +1,28 @@
+{
+  "name": "using-postgresql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlechuong/using-postgresql.git"
+  },
+  "keywords": [],
+  "author": "rlechuong",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/rlechuong/using-postgresql/issues"
+  },
+  "homepage": "https://github.com/rlechuong/using-postgresql#readme",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "pg": "^8.21.0"
+  }
+}
