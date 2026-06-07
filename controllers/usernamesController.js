@@ -1,4 +1,9 @@
-import { getAllUsernames, insertUsername, searchUsername } from "../db/queries.js";
+import {
+  getAllUsernames,
+  insertUsername,
+  searchUsername,
+  deleteAllUsernames,
+} from "../db/queries.js";
 
 const getUsernames = async (req, res) => {
   const usernames = req.query.search
@@ -19,4 +24,9 @@ const createUsernamePost = async (req, res) => {
   res.redirect("/");
 };
 
-export { getUsernames, createUsernameGet, createUsernamePost };
+const deleteUsernamesGet = async (req, res) => {
+  await deleteAllUsernames();
+  res.redirect("/");
+};
+
+export { getUsernames, createUsernameGet, createUsernamePost, deleteUsernamesGet };

@@ -16,4 +16,8 @@ const searchUsername = async (search) => {
   return rows;
 };
 
-export { getAllUsernames, insertUsername, searchUsername };
+const deleteAllUsernames = async () => {
+  await pool.query("DELETE FROM usernames");
+};
+
+export { getAllUsernames, insertUsername, searchUsername, deleteAllUsernames };
