@@ -1,7 +1,10 @@
-import { getAllUsernames, insertUsername } from "../db/queries.js";
+import { getAllUsernames, insertUsername, searchUsername } from "../db/queries.js";
 
 const getUsernames = async (req, res) => {
-  const usernames = await getAllUsernames();
+  const usernames = req.query.search
+    ? await searchUsername(req.query.search)
+    : await getAllUsernames();
+
   console.log("Usernames: ", usernames);
   res.send("Usernames: " + usernames.map((user) => user.username).join(", "));
 };
